@@ -1,6 +1,6 @@
 class Book < ActiveRecord::Base
   belongs_to :checkout
-  belongs_to :category
+  has_many :categories, through: :categorizations
 
   validates :title, presence: true, uniqueness: true
   validates :author, presence: true
